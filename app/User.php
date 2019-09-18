@@ -2,13 +2,15 @@
 
 namespace App;
 
+use App\Models\Concerns\UsesUuid;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use UsesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +38,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Set the default user's role.
+     */
+    protected $attributes = [
+        'role' => 'user',
+     ];
+
+    /**
+     * Setting primary key
+     */
+    protected $primaryKey = 'id';
 }
