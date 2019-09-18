@@ -1,3 +1,14 @@
+Install new laravel application
 $ laravel new Clinica
 
-Initialize git repository
+# Initialize git repository
+# Connect db. vie .env file
+
+Install laravel UI kit
+$ composer require laravel/ui --dev
+
+Install Vue.js and auth scaffolding
+$ php artisan ui vue --auth
+$php artisan migrate
+
+
