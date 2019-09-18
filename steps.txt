@@ -1,0 +1,3 @@
+$ laravel new Clinica
+
+Initialize git repository
