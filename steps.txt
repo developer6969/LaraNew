@@ -11,4 +11,7 @@ Install Vue.js and auth scaffolding
 $ php artisan ui vue --auth
 $php artisan migrate
 
+$ npm install --global cross-env
+remove "cross-env": "^5.1", from package.json
+
 
