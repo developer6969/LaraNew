@@ -1,0 +1,34 @@
+.mobile {
+    margin-top: 50px !important;
+}
+
+.navbar-brand {
+    padding-left: 20px !important;
+}
+
+.right-top {
+    margin-top: 0px;
+}
+
+.shrink {
+    margin-top: 0px !important;
+}
+
+@media screen and (max-width: 600px) {
+
+    .mobile {
+        margin-top: 20px !important;
+    }
+
+    .right-top {
+        margin-top: 10px;
+    }
+
+    .table-text {
+        font-size: 0.7rem;
+    }
+
+    .shrink {
+        margin-top: 20px !important;
+    }
+}

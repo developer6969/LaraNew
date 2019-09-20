@@ -1,0 +1,58 @@
+.flex-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.active-menu-item>.nav-link {
+    color: rgb(129, 188, 255) !important;
+    border-bottom: 1px solid #fff;
+}
+
+// Tooltip container
+// .tooltip {
+//     position: relative;
+//     display: inline-block;
+//     border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+// }
+  
+// Tooltip text
+// .tooltip .tooltiptext {
+//     visibility: hidden;
+//     width: 120px;
+//     background-color: black;
+//     color: #fff;
+//     text-align: center;
+//     padding: 5px 0;
+//     border-radius: 6px;
+   
+//     // Position the tooltip text - see examples below!
+//     position: absolute;
+//     z-index: 1;
+// }
+  
+// Show the tooltip text when you mouse over the tooltip container
+// .tooltip:hover .tooltiptext {
+//     visibility: visible;
+// }
+
+// .tooltip .tooltiptext::after {
+//     content: " ";
+//     position: absolute;
+//     top: 100%; /* At the bottom of the tooltip */
+//     left: 50%;
+//     margin-left: -5px;
+//     border-width: 5px;
+//     border-style: solid;
+//     border-color: black transparent transparent transparent;
+// }
+
+@media screen and (max-width: 600px) {
+
+    //
+}

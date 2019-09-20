@@ -1,11 +1,14 @@
-@extends('layouts.app')
-
+@extends('layouts.website.main')
+@php
+    $title = 'Verify Email';    
+@endphp
 @section('content')
-<div class="container">
+@include('layouts.website.navbar')
+<div class="container mt-5 pt-4 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                {{-- <div class="card-header">{{ __('Verify Your Email Address') }}</div> --}}
 
                 <div class="card-body">
                     @if (session('resent'))

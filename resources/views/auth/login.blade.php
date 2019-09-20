@@ -1,11 +1,14 @@
-@extends('layouts.app')
-
+@extends('layouts.website.main')
+@php
+    $title = 'Account Login';    
+@endphp
 @section('content')
-<div class="container">
+@include('layouts.website.navbar')
+<div class="container mt-5 pt-4 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                {{-- <div class="card-header">{{ __('Login') }}</div> --}}
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -62,6 +65,13 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                            </div>
+                        </div>
+                        <div class="form-group row mt-4">
+                            <div class="col-md-8 offset-md-4">
+                                <a class="btn btn-link pl-0" href="{{ route('register') }}">
+                                    {{ __('Create New Account') }}
+                                </a>
                             </div>
                         </div>
                     </form>

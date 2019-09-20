@@ -11,10 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// PUBLIC ROUTES
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'PageController@menu');
+Route::get('/about', 'PageController@about');
+Route::get('/doctors', 'PageController@doctors');
+Route::get('/services', 'PageController@services');
+Route::get('/blog', 'PageController@blog');
+Route::get('/reviews', 'PageController@reviews');
+Route::get('/gallery', 'PageController@gallery');
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// For USER (auth check by controller)
+Route::get('/my-appointments', 'PageController@appointments');
+Route::get('/members', 'PageController@members');
+Route::get('/chat', 'PageController@chat');

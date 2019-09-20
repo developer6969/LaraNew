@@ -1,11 +1,14 @@
-@extends('layouts.app')
-
+@extends('layouts.website.main')
+@php
+    $title = 'Create Account';    
+@endphp
 @section('content')
-<div class="container">
+@include('layouts.website.navbar')
+<div class="container mt-5 pt-4 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                {{-- <div class="card-header">{{ __('Register') }}</div> --}}
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -66,6 +69,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-4">
+                            <div class="col-md-8 offset-md-4">
+                                <a class="btn btn-link pl-0" href="{{ route('login') }}">
+                                    {{ __('Already have account?') }}
+                                </a>
                             </div>
                         </div>
                     </form>
