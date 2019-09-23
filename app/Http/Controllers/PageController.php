@@ -8,18 +8,22 @@ use App\Clinic;
 use App\Day;
 use App\Doctor;
 use App\Gallery;
+use App\Health;
 use App\Member;
 use App\Menu;
 use App\Page;
 use App\Post;
+use App\Record;
 use App\Review;
 use App\Schedule;
 use App\Service;
 use App\Session;
 use App\Status;
 use App\UserDefault;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -228,31 +232,43 @@ class PageController extends Controller
     public function appointments() {
         // Authorised User
         if (Auth::check()) {
-
+            
             $availableDays = Day::all();
             $availableDays = $availableDays->map(function ($day){
                 return collect([
-                    'dayid' => (getdate(time() + $this->addDay(($day->id)-1))['wday'])+1,
+                    'dayid' => getdate(time() + $this->addDay(($day->id)-1))['wday'] + 1,
                     'month' => getdate(time() + $this->addDay(($day->id)-1))['month'],
+                    'mon' => getdate(time() + $this->addDay(($day->id)-1))['mon'],
                     'date' => getdate(time() + $this->addDay(($day->id)-1))['mday'],
+                    'year' => getdate(time() + $this->addDay(($day->id)-1))['year'],
                     'day' => getdate(time() + $this->addDay(($day->id)-1))['weekday'],
                     'status' => $this->isDocAvailableForThisDay((getdate(time() + $this->addDay(($day->id)-1))['wday'])+1),
                     'sessions' => $this->isDocAvailableForSessionOnThisDay( true, (getdate(time() + $this->addDay(($day->id)-1))['wday'])+1),
-                    // 'appointment_count' => $this->isDocAvailableForSessionOnThisDay( false, (getdate(time() + $this->addDay(($day->id)-1))['wday'])+1)
+                    'appointment_count' => $this->isDocAvailableForSessionOnThisDay( false, (getdate(time() + $this->addDay(($day->id)-1))['wday'])+1)
                 ]);
             });
 
             $userDefaults = UserDefault::where('user_id', auth()->user()->id)->take(1)->get();
-            $userDefaults = $userDefaults ->map(function ($userDefault){
-                return collect([
-                    'clinic' => $userDefault->clinic_id,
-                    'doctor' => $userDefault->doctor_id,
-                    'member' => $userDefault->member_id,
-                    'day' => $userDefault->day_id,
-                    'session' => $userDefault->session_id
-                ]);
-            });
-           
+            if ($userDefaults->count() > 0) {
+                $userDefaults = $userDefaults ->map(function ($userDefault){
+                    return collect([
+                        'clinic' => $userDefault->clinic_id,
+                        'doctor' => $userDefault->doctor_id,
+                        'member' => $userDefault->member_id,
+                        'day' => $userDefault->day_id,
+                        'session' => $userDefault->session_id
+                    ]);
+                });
+            } else {
+                $userDefaults = UserDefault::take(1)->get();
+                $userDefaults = $userDefaults ->map(function (){
+                    return collect([
+                        'clinic' => 1,
+                        'doctor' => 1
+                    ]);
+                });
+            }
+
             $appointments = Appointment::where('user_id', auth()->user()->id)->get();
             $appointments = $appointments ->map(function ($appointment){
                 return collect([
@@ -262,8 +278,12 @@ class PageController extends Controller
                     'doctor' => $appointment->schedule->doctor->name,
                     'clinic' => $appointment->schedule->clinic->street,
                     'memberId' => $appointment->member_id,
+                    'member' => $appointment->member->name, 
                     'purpose' => $appointment->purpose,
-                    'status' => $appointment->status->title,
+                    'status' => $appointment->status->id,
+                    'status_title' => $appointment->status->title,
+                    'color' => $appointment->status->color,
+                    'queue' => $appointment->queue, 
                     'charges' => $appointment->schedule->session->charge,
                 ]);
             });
@@ -297,10 +317,45 @@ class PageController extends Controller
 
     public function members() {    
         if (Auth::check()) {
+
+            $members = Member::where('user_id', auth()->user()->id)->orderBy('name', 'asc')->get();
+            // $members = $members->map(function ($member) {
+            //     return collect([
+            //         'data' => $member,
+            //     ]);                
+            // });
+
+            $healths = Health::where('user_id', auth()->user()->id)->get();
+            $healths = $healths->map(function ($health){
+                return collect([
+                   'id' => $health->id,
+                   'member' => $health->member->id,
+                   'icon' => $health->record->icon,
+                   'title' => $health->record->title,
+                   'value' =>$health->value,
+                   'unit' => $health->record->unit->abbr,
+                   'average' => $health->getAverage($health->record->title),
+                ]);
+            });
+            
+            $records = Record::all();
+            $records = $records->map(function ($record){
+                return collect([
+                   'id' => $record->id,
+                   'icon' => $record->icon,
+                   'title' => $record->title,
+                   'unit' => $record->unit->abbr,
+                ]);
+            });
+
             $data = array(
                 'menus' => Menu::all(),
                 'title' => 'Members',
-                // 'members' => Member::where('user_id', auth()->user()->id)->orderBy('name', 'asc')->get(),
+                'bloods' => DB::table('bloods')->get(),
+                'genders' => DB::table('genders')->get(),
+                'members' => $members,
+                'healths' => $healths,
+                'records' => $records,
             );
             return view('pages.members')->with($data);
         } else {
@@ -318,7 +373,7 @@ class PageController extends Controller
                 'menus' => Menu::all(),
                 'title' => 'Chat',
                 // 'chats' => Chat::where('user_id', auth()->user()->id)->orderBy('added_on', 'desc')->get(),
-                // 'members' => Member::where('user_id', auth()->user()->id)->get(),
+                'members' => Member::where('user_id', auth()->user()->id)->get(),
             );
             return view('pages.chat')->with($data);
         } else {
@@ -355,7 +410,7 @@ class PageController extends Controller
                                  ->where('doctor_id', request('doctor'))
                                  ->where('day_id', $dayId)
                                  ->where('status', 'available')
-                                 ->select('session_id', 'appointment_count')
+                                 ->select('session_id', 'appointments_count')
                                  ->get();
 
             if(empty($sessions)) {

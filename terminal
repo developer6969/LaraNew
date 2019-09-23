@@ -1,0 +1,251 @@
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ php artisan ui bootstrap
+Bootstrap scaffolding installed successfully.
+Please run "npm install && npm run dev" to compile your fresh scaffolding.
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ php artisan ui vue
+Vue scaffolding installed successfully.
+Please run "npm install && npm run dev" to compile your fresh scaffolding.
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm run watch
+
+> @ watch C:\xampp\htdocs\a\Clinica
+> npm run development -- --watch
+
+
+> @ development C:\xampp\htdocs\a\Clinica
+> cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js "--watch"
+
+The system cannot find the path specified.
+events.js:174
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: spawn node_modules\webpack\bin\webpack.js ENOENT
+    at notFoundError (C:\Users\pglap\AppData\Roaming\npm\node_modules\cross-env\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\pglap\AppData\Roaming\npm\node_modules\cross-env\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at ChildProcess.cp.emit (C:\Users\pglap\AppData\Roaming\npm\node_modules\cross-env\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)
+Emitted 'error' event at:
+    at ChildProcess.cp.emit (C:\Users\pglap\AppData\Roaming\npm\node_modules\cross-env\node_modules\cross-spawn\lib\enoent.js:30:37)
+    at Process.ChildProcess._handle.onexit (internal/child_process.js:248:12)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! @ development: `cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js "--watch"`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the @ development script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\pglap\AppData\Roaming\npm-cache\_logs\2019-09-20T06_41_49_218Z-debug.log
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! @ watch: `npm run development -- --watch`
+npm ERR! Exit status 1
+npm ERR!
+npm ERR! Failed at the @ watch script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\pglap\AppData\Roaming\npm-cache\_logs\2019-09-20T06_41_49_306Z-debug.log
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm update
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1010 packages from 492 contributors and audited 17156 packages in 284.092s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install vue
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ vue@2.6.10
+updated 1 package and audited 17156 packages in 15.147s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install --save-dev @fortawesome/fontawesome-free
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ @fortawesome/fontawesome-free@5.11.1
+updated 1 package and audited 17156 packages in 24.817s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install admin-lte@v3.0.0-alpha.2 --save
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ admin-lte@3.0.0-alpha.2
+added 11 packages from 16 contributors and audited 17175 packages in 51.877s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm i axios vform
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ axios@0.19.0
++ vform@1.0.1
+added 1 package from 1 contributor, updated 1 package and audited 17176 packages in 22.862s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install vue-router
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ vue-router@3.1.3
+added 1 package from 1 contributor and audited 17177 packages in 24.642s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install moment --save
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ moment@2.24.0
+updated 1 package and audited 17178 packages in 17.593s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install --save sweetalert2
+
+> sweetalert2@8.17.6 postinstall C:\xampp\htdocs\a\Clinica\node_modules\sweetalert2
+> node bin/postinstall.js
+
+
+              Has SweetAlert2 helped you create amazing applications?
+              You can show your <3 and support by making a donation:
+
+              > https://sweetalert2.github.io/#donations
+
+              Also, the author of SweetAlert2 (@limonte) is looking for
+              short-term working contracts in front-end, preferably OSS.
+
+              > https://github.com/limonte
+
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ sweetalert2@8.17.6
+added 1 package from 8 contributors and audited 17179 packages in 17.623s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ npm install laravel-vue-pagination
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
++ laravel-vue-pagination@2.3.0
+added 1 package from 1 contributor and audited 17181 packages in 21.724s
+found 0 vulnerabilities
+
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ php artisan make:controller API/AppointmentController --api
+Controller created successfully.
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ composer require laravel/passport
+Using version ^7.4 for laravel/passport
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 15 installs, 0 updates, 0 removals
+  - Installing psr/http-message (1.0.1): Loading from cache
+  - Installing psr/http-factory (1.0.1): Downloading (100%)
+  - Installing zendframework/zend-diactoros (2.1.3): Downloading (100%)
+  - Installing symfony/psr-http-message-bridge (v1.2.0): Downloading (100%)
+  - Installing phpseclib/phpseclib (2.0.23): Downloading (100%)
+  - Installing defuse/php-encryption (v2.2.1): Downloading (100%)
+  - Installing lcobucci/jwt (3.3.1): Downloading (100%)
+  - Installing league/event (2.2.0): Downloading (100%)
+  - Installing league/oauth2-server (7.4.0): Downloading (100%)
+  - Installing ralouphie/getallheaders (3.0.3): Loading from cache
+  - Installing guzzlehttp/psr7 (1.6.1): Loading from cache
+  - Installing guzzlehttp/promises (v1.3.1): Loading from cache
+  - Installing guzzlehttp/guzzle (6.3.3): Loading from cache
+  - Installing firebase/php-jwt (v5.0.0): Downloading (100%)
+  - Installing laravel/passport (v7.4.1): Downloading (100%)
+symfony/psr-http-message-bridge suggests installing nyholm/psr7 (For a super lightweight PSR-7/17 implementation)
+phpseclib/phpseclib suggests installing ext-libsodium (SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.)
+phpseclib/phpseclib suggests installing ext-mcrypt (Install the Mcrypt extension in order to speed up a few other cryptographic operations.)
+phpseclib/phpseclib suggests installing ext-gmp (Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.)
+guzzlehttp/psr7 suggests installing zendframework/zend-httphandlerrunner (Emit PSR-7 responses)
+Writing lock file
+Generating optimized autoload files
+Warning: Ambiguous class resolution, "MembersTableSeeder" was found in both "C:/xampp/htdocs/a/Clinica/database/seeds/MembersTabdfdfleSeeder.php" and "C:/xampp/htdocs/a/Clinica/database/seeds/MembersTableSeeder.php", the first will be used.
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: facade/ignition
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/passport
+Discovered Package: laravel/tinker
+Discovered Package: laravel/ui
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ composer require laravel/passport
+Using version ^7.4 for laravel/passport
+./composer.json has been updated
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Nothing to install or update
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+> @php artisan package:discover --ansi
+Discovered Package: facade/ignition
+Discovered Package: fideloper/proxy
+Discovered Package: laravel/passport
+Discovered Package: laravel/tinker
+Discovered Package: laravel/ui
+Discovered Package: nesbot/carbon
+Discovered Package: nunomaduro/collision
+Package manifest generated successfully.
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ php artisan migrate
+Migrating: 2016_06_01_000001_create_oauth_auth_codes_table
+Migrated:  2016_06_01_000001_create_oauth_auth_codes_table (1.77 seconds)
+Migrating: 2016_06_01_000002_create_oauth_access_tokens_table
+Migrated:  2016_06_01_000002_create_oauth_access_tokens_table (1.44 seconds)
+Migrating: 2016_06_01_000003_create_oauth_refresh_tokens_table
+Migrated:  2016_06_01_000003_create_oauth_refresh_tokens_table (1.35 seconds)
+Migrating: 2016_06_01_000004_create_oauth_clients_table
+Migrated:  2016_06_01_000004_create_oauth_clients_table (0.76 seconds)
+Migrating: 2016_06_01_000005_create_oauth_personal_access_clients_table
+Migrated:  2016_06_01_000005_create_oauth_personal_access_clients_table (1.42 seconds)
+
+pglap@LAPTOP-KJ2RTIHE MINGW64 /c/xampp/htdocs/a/Clinica (master)
+$ php artisan passport:install
+Encryption keys generated successfully.
+Personal access client created successfully.
+Client ID: 1
+Client secret: InzoOmjv9Zc5Bdm3iZyL0JenSui6CMlAElZDxk2n
+Password grant client created successfully.
+Client ID: 2
+Client secret: K2bqpCEoi4exEfgWDFmUg7KouSwc18zoPZC70Xta

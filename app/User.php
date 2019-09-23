@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use App\Models\Concerns\UsesUuid;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -9,8 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-    use UsesUuid;
+    use HasApiTokens, Notifiable, UsesUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -50,4 +50,9 @@ class User extends Authenticatable
      * Setting primary key
      */
     protected $primaryKey = 'id';
+
+     public function member() {
+         return $this->hasMany(Member::class);
+     }
+
 }

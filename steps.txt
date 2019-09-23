@@ -14,4 +14,6 @@ $php artisan migrate
 $ npm install --global cross-env
 remove "cross-env": "^5.1", from package.json
 
+$ php composer.phar require intervention/image
+$ composer require intervention/image
 

@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
 {
+
+    protected $guarded = []; 
+
     public function member() {
-        return $this->hasOne(Member::class);
+        return $this->belongsTo(Member::class);
     }
 
     public function schedule() {

@@ -25,7 +25,11 @@ class DatabaseSeeder extends Seeder
         // $this->call(GalleriesTableSeeder::class);
         // $this->call(CategoriesTableSeeder::class);
         // $this->call(PostsTableSeeder::class);
-        
+        // $this->call(GendersTableSeeder::class);
+        // $this->call(BloodsTableSeeder::class);
+        // $this->call(UnitsTableSeeder::class);
+        // $this->call(RecordsTableSeeder::class);
+        // $this->call(HealthsTableSeeder::class);
         // Pending
         // $this->call(AppointmentsTableSeeder::class);
         // $this->call(UserTableSeeder::class);

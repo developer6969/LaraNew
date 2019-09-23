@@ -20,6 +20,7 @@
     <body>
         <div id="app">
             @yield('content')
+            <vue-progress-bar></vue-progress-bar>
         </div>
     </body>
 </html>

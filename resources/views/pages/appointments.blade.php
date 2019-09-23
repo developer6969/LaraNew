@@ -1,8 +1,8 @@
 @extends('pages.base')
-{{-- {{ dd( $selectedMemberId ) }} --}}
+
 @section('page')
     <div class="container mt-5 pt-4">
-        <my-appointment 
+        <my-appointments 
             days = '{{ $days }}'
             clinics = '{{ $clinics }}'
             doctors = '{{ $doctors }}'
@@ -13,7 +13,7 @@
             appointments = '{{ $appointments }}'
             queriedclinicid = '{{ $queriedclinicid }}'
             querieddoctorid = '{{ $querieddoctorid }}'>
-        </my-appointment>
+        </my-appointments>
     </div>
 @endsection
 

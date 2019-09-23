@@ -25,12 +25,14 @@ Route::get('/blog', 'PageController@blog');
 Route::get('/reviews', 'PageController@reviews');
 Route::get('/gallery', 'PageController@gallery');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/authenticated', function () {
+    return 's5d4';
+});
 
 // For USER (auth check by controller)
 Route::get('/my-appointments', 'PageController@appointments');
-Route::get('/members', 'PageController@members');
-Route::get('/chat', 'PageController@chat');
+Route::get('/my-members', 'PageController@members');
+Route::get('/my-chats', 'PageController@chat');

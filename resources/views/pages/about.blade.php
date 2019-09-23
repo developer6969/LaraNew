@@ -64,13 +64,14 @@
                     @endforeach
                 </div>
             </div>
-            <div class="card contact">
+            <div class="flex-container row">
+                <div class="card contact col-md-5">
                     <div class="card-body" style="height: 85px"> 
                         <p class="h5 font-weight-bold">Call us</p>
                         <p class="mt-2">{{ $clinic->mobile }}</small>
                     </div>
                 </div>
-                <div class="card contact">
+                <div class="card contact col-md-5">
                     <div class="card-body" style="height: 85px"> 
                         <p class="h5">
                             <strong>Mail us</strong>
@@ -78,7 +79,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="card message">
+                <div class="card message col-md-11">
                     <div class="card-body"> 
                         <p class="h5"><strong>Send your message</strong></p>
                         <form action="" method="POST" enctype="multipart/form-data">
@@ -99,6 +100,7 @@
                         </form>
                     </div>
                 </div>
+            </div>
         @endif
     </div>
 @endsection
@@ -121,6 +123,10 @@
         height: 300px;
         object-fit: cover;
         object-position: top;
+    }
+
+    .contact {
+        /* margin: 5px !important; */
     }
 
 </style>
