@@ -108,7 +108,6 @@ class PageController extends Controller
     public function menu() {
         $menus = Menu::all();
         return view('pages.menus', compact('menus'));
-
     }
 
     // PUBLIC PAGES

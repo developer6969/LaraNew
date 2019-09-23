@@ -4,13 +4,13 @@
     <div class="container">
         <div class="left-half">
             <article>
-                <img src="img/cover_1200.png" style='height: 100%; object-fit: fill; z-index: -1;'>
+                <img src="img/cover_1200.png">
             </article>
         </div>
         <div class="right-half">
             <article>
                 <div class="text-center">
-                    <a href="/" class="btn app-brand">{{ config('app.name') }}</a>
+                    <a href="/" class="btn app-brand">Clinica</a>
                 </div>
                 <div class="flex-container">
                     @if(!empty($menus) && count($menus) > 0)
@@ -25,7 +25,7 @@
                     @endif
                 </div>
                 <div class="text-center">
-                    <a href="/appointments/create" class="btn book-btn">Book Appointment</a>
+                    <a href="/my-appointments" class="btn book-btn">Book Appointment</a>
                 </div>
             </article>
         </div>
